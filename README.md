@@ -1,21 +1,18 @@
 # ahas-discord-mp3-bot
-### 커맨드 등록
+# 커맨드 등록
+```bash
 yarn deploy
-
-or
-
+# or
 npm run deploy
-
-or
-
+# or
 node deploy-commands.js
-### 봇 서버 실행
+```
+
+# 봇 서버 실행
+```bash
 yarn start
-
-or
-
+# or
 npm run start
-
-or
-
+# or
 node index.js
+```
