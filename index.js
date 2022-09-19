@@ -13,7 +13,7 @@ for (const file of commandFiles) {
   const filePath = path.join(commandsPath, file);
   const command = require(filePath);
   client.commands.set(command.data.name, command);
-	console.log("set command: %s", command.data.name);
+  console.log("set command: %s", command.data.name);
 }
 
 client.once("ready", () => {
@@ -21,12 +21,16 @@ client.once("ready", () => {
 });
 
 client.on("interactionCreate", async (interaction) => {
-  if (!interaction.isChatInputCommand()) return;
+  if (!interaction.isChatInputCommand()) {
+    return;
+  }
 
   const command = interaction.client.commands.get(interaction.commandName);
-	console.log("interactionCreate: %s", interaction.commandName);
+  console.log("interactionCreate: %s", interaction.commandName);
 
-  if (!command) return;
+  if (!command) {
+    return;
+  }
 
   try {
     await command.run(interaction);
